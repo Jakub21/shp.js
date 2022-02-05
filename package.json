@@ -1,0 +1,15 @@
+{
+  "name": "@jakub21/shp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify ./webIndex.js -o ./build/shp.js -v",
+    "watch": "watchify ./webIndex.js -o ./build/shp.js -v"
+  },
+  "author": "Jakub21",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^17.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SHP.js Demo</title>
+    <script src="/lib/shp.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div id="Content"></div>
+  </body>
+  <script>
+    const container = document.getElementById('Content');
+    const compiler = new shp.Compiler();
+
+    const nodesArray = compiler.compile(`
+      $div[#Generated] {
+        $h3 {Hello world}
+        This content was compiled from SHP code!
+      }
+    `);
+    for (let node of nodesArray) {
+      container.append(node);
+    }
+
+    const elm = document.getElementById('Generated');
+    shp.append(elm, '$p[.red] { Quick append }');
+    shp.prepend(elm, '$p[.red] { Quick prepend }');
+
+  </script>
+</html>
